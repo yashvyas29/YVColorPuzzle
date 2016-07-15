@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0F3C7240A8E91B0A1D3F0D /* Pods_YVPuzzleGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F27B5AF32505814E8A10505E /* Pods_YVPuzzleGame.framework */; };
 		D31695761D34BBC600CFC4D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31695751D34BBC600CFC4D2 /* AppDelegate.swift */; };
 		D31695781D34BBC600CFC4D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31695771D34BBC600CFC4D2 /* ViewController.swift */; };
 		D316957B1D34BBC700CFC4D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31695791D34BBC700CFC4D2 /* Main.storyboard */; };
 		D316957E1D34BBC700CFC4D2 /* YVPuzzleGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D316957C1D34BBC700CFC4D2 /* YVPuzzleGame.xcdatamodeld */; };
 		D31695801D34BBC700CFC4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D316957F1D34BBC700CFC4D2 /* Assets.xcassets */; };
 		D31695831D34BBC700CFC4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31695811D34BBC700CFC4D2 /* LaunchScreen.storyboard */; };
+		D3663C4C1D379132004FE958 /* PuzzleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3663C4A1D379132004FE958 /* PuzzleHeader.swift */; };
+		D3663C4D1D379132004FE958 /* PuzzleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3663C4B1D379132004FE958 /* PuzzleHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9CBD5D3187D02CD7BAEE3CB0 /* Pods-YVPuzzleGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YVPuzzleGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-YVPuzzleGame/Pods-YVPuzzleGame.release.xcconfig"; sourceTree = "<group>"; };
 		D31695721D34BBC600CFC4D2 /* YVPuzzleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YVPuzzleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D31695751D34BBC600CFC4D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D31695771D34BBC600CFC4D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,10 @@
 		D316957F1D34BBC700CFC4D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D31695821D34BBC700CFC4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D31695841D34BBC700CFC4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3663C4A1D379132004FE958 /* PuzzleHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleHeader.swift; sourceTree = "<group>"; };
+		D3663C4B1D379132004FE958 /* PuzzleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PuzzleHeader.xib; sourceTree = "<group>"; };
+		F0A75C37CCC16D48E77834DA /* Pods-YVPuzzleGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YVPuzzleGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YVPuzzleGame/Pods-YVPuzzleGame.debug.xcconfig"; sourceTree = "<group>"; };
+		F27B5AF32505814E8A10505E /* Pods_YVPuzzleGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YVPuzzleGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0F3C7240A8E91B0A1D3F0D /* Pods_YVPuzzleGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8971F4B48E0223A9E4F0892 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F27B5AF32505814E8A10505E /* Pods_YVPuzzleGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D31695691D34BBC600CFC4D2 = {
 			isa = PBXGroup;
 			children = (
 				D31695741D34BBC600CFC4D2 /* YVPuzzleGame */,
 				D31695731D34BBC600CFC4D2 /* Products */,
+				D8839FA6DB87004E8779C44F /* Pods */,
+				B8971F4B48E0223A9E4F0892 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +75,7 @@
 		D31695741D34BBC600CFC4D2 /* YVPuzzleGame */ = {
 			isa = PBXGroup;
 			children = (
+				D3663C451D379003004FE958 /* PuzzleHeader */,
 				D31695751D34BBC600CFC4D2 /* AppDelegate.swift */,
 				D31695771D34BBC600CFC4D2 /* ViewController.swift */,
 				D31695791D34BBC700CFC4D2 /* Main.storyboard */,
@@ -67,6 +87,24 @@
 			path = YVPuzzleGame;
 			sourceTree = "<group>";
 		};
+		D3663C451D379003004FE958 /* PuzzleHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D3663C4A1D379132004FE958 /* PuzzleHeader.swift */,
+				D3663C4B1D379132004FE958 /* PuzzleHeader.xib */,
+			);
+			path = PuzzleHeader;
+			sourceTree = "<group>";
+		};
+		D8839FA6DB87004E8779C44F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0A75C37CCC16D48E77834DA /* Pods-YVPuzzleGame.debug.xcconfig */,
+				9CBD5D3187D02CD7BAEE3CB0 /* Pods-YVPuzzleGame.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D31695871D34BBC700CFC4D2 /* Build configuration list for PBXNativeTarget "YVPuzzleGame" */;
 			buildPhases = (
+				404EC5AE481E16F42B505874 /* 📦 Check Pods Manifest.lock */,
 				D316956E1D34BBC600CFC4D2 /* Sources */,
 				D316956F1D34BBC600CFC4D2 /* Frameworks */,
 				D31695701D34BBC600CFC4D2 /* Resources */,
+				72AAF7A2190F99F9D3CF0991 /* 📦 Embed Pods Frameworks */,
+				AACBE351FAE8C46C02BE5968 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3663C4D1D379132004FE958 /* PuzzleHeader.xib in Resources */,
 				D31695831D34BBC700CFC4D2 /* LaunchScreen.storyboard in Resources */,
 				D31695801D34BBC700CFC4D2 /* Assets.xcassets in Resources */,
 				D316957B1D34BBC700CFC4D2 /* Main.storyboard in Resources */,
@@ -133,11 +175,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		404EC5AE481E16F42B505874 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		72AAF7A2190F99F9D3CF0991 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YVPuzzleGame/Pods-YVPuzzleGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AACBE351FAE8C46C02BE5968 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YVPuzzleGame/Pods-YVPuzzleGame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D316956E1D34BBC600CFC4D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3663C4C1D379132004FE958 /* PuzzleHeader.swift in Sources */,
 				D316957E1D34BBC700CFC4D2 /* YVPuzzleGame.xcdatamodeld in Sources */,
 				D31695781D34BBC600CFC4D2 /* ViewController.swift in Sources */,
 				D31695761D34BBC600CFC4D2 /* AppDelegate.swift in Sources */,
@@ -253,6 +344,7 @@
 		};
 		D31695881D34BBC700CFC4D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0A75C37CCC16D48E77834DA /* Pods-YVPuzzleGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YVPuzzleGame/Info.plist;
@@ -264,6 +356,7 @@
 		};
 		D31695891D34BBC700CFC4D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CBD5D3187D02CD7BAEE3CB0 /* Pods-YVPuzzleGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YVPuzzleGame/Info.plist;
@@ -292,6 +385,7 @@
 				D31695891D34BBC700CFC4D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D31695711D34BBC600CFC4D2"
-               BuildableName = "YVPuzzleGame.app"
-               BlueprintName = "YVPuzzleGame"
-               ReferencedContainer = "container:YVPuzzleGame.xcodeproj">
+               BlueprintIdentifier = "995CCB89AFF5F4D9451C08DB919794D4"
+               BuildableName = "Pods_YVPuzzleGame.framework"
+               BlueprintName = "Pods-YVPuzzleGame"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D31695711D34BBC600CFC4D2"
-            BuildableName = "YVPuzzleGame.app"
-            BlueprintName = "YVPuzzleGame"
-            ReferencedContainer = "container:YVPuzzleGame.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D31695711D34BBC600CFC4D2"
-            BuildableName = "YVPuzzleGame.app"
-            BlueprintName = "YVPuzzleGame"
-            ReferencedContainer = "container:YVPuzzleGame.xcodeproj">
+            BlueprintIdentifier = "995CCB89AFF5F4D9451C08DB919794D4"
+            BuildableName = "Pods_YVPuzzleGame.framework"
+            BlueprintName = "Pods-YVPuzzleGame"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D31695711D34BBC600CFC4D2"
-            BuildableName = "YVPuzzleGame.app"
-            BlueprintName = "YVPuzzleGame"
-            ReferencedContainer = "container:YVPuzzleGame.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
