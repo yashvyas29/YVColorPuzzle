@@ -13,7 +13,7 @@ class ViewController: UIViewController, RAReorderableLayoutDelegate, RAReorderab
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let arrFixedColors: [UIColor] = [UIColor.redColor(), UIColor.yellowColor(), UIColor.greenColor(), UIColor.orangeColor(), UIColor.purpleColor(), UIColor.blueColor(), UIColor.darkGrayColor(), UIColor.lightGrayColor(), UIColor.grayColor(), UIColor.whiteColor(), UIColor.cyanColor(), UIColor.magentaColor(), UIColor.brownColor()]
+    let arrFixedColors: [UIColor] = [UIColor.red, UIColor.yellow, UIColor.green, UIColor.orange, UIColor.purple, UIColor.blue, UIColor.darkGray, UIColor.lightGray, UIColor.gray, UIColor.white, UIColor.cyan, UIColor.magenta, UIColor.brown]
     var arrPuzzleColors: [UIColor] = []
     var prevRandom: Int = 0
     var currentLevelSides: Int = 2
@@ -24,8 +24,8 @@ class ViewController: UIViewController, RAReorderableLayoutDelegate, RAReorderab
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        navigationController?.navigationBarHidden = true
-        collectionView.registerNib(UINib(nibName: "PuzzleHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "PuzzleHeader")
+        navigationController?.isNavigationBarHidden = true
+        collectionView.register(UINib(nibName: "PuzzleHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "PuzzleHeader")
         refreshData()
     }
 
@@ -61,36 +61,35 @@ class ViewController: UIViewController, RAReorderableLayoutDelegate, RAReorderab
     
     // MARK: - RAReorderableLayout Delegate
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrPuzzleColors.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PuzzleCell", forIndexPath: indexPath)
-        cell.backgroundColor = arrPuzzleColors[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PuzzleCell", for: indexPath)
+        cell.backgroundColor = arrPuzzleColors[(indexPath as NSIndexPath).item]
         
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "PuzzleHeader", forIndexPath: indexPath) as! PuzzleHeader
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "PuzzleHeader", for: indexPath) as! PuzzleHeader
         headerView.lblRound.text = "Round \(currentLevel)"
         return headerView
     }
     
-    func collectionView(collectionView: UICollectionView, atIndexPath: NSIndexPath, didMoveToIndexPath toIndexPath: NSIndexPath) {
-        
-        let color: UIColor = arrPuzzleColors.removeAtIndex(atIndexPath.item)
-        arrPuzzleColors.insert(color, atIndex: toIndexPath.item)
+    func collectionView(_ collectionView: UICollectionView, at: IndexPath, didMoveTo toIndexPath: IndexPath) {
+        let color: UIColor = arrPuzzleColors.remove(at: (at as NSIndexPath).item)
+        arrPuzzleColors.insert(color, at: (toIndexPath as NSIndexPath).item)
     }
     
-    func collectionView(collectionView: UICollectionView, collectionViewLayout layout: RAReorderableLayout, didEndDraggingItemToIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, collectionView layout: RAReorderableLayout, didEndDraggingItemTo indexPath: IndexPath) {
         
         var success = false
         var rowSets = Set<Set<UIColor>>()
@@ -129,45 +128,45 @@ class ViewController: UIViewController, RAReorderableLayoutDelegate, RAReorderab
         
         if success {
             
-            let alert = UIAlertController(title: "Congratulations!!!", message: "You won this round.", preferredStyle: .ActionSheet)
+            let alert = UIAlertController(title: "Congratulations!!!", message: "You won this round.", preferredStyle: .actionSheet)
             let playNextLevel = "Play Round \(currentLevel+1)"
-            let playAgainAction = UIAlertAction(title: playNextLevel, style: .Default, handler: { (action) in
+            let playAgainAction = UIAlertAction(title: playNextLevel, style: .default, handler: { (action) in
                 self.currentLevel += 1
                 self.currentLevelSides += 1
                 self.arrPuzzleColors.removeAll()
                 self.refreshData()
-                self.collectionView.performBatchUpdates({ 
-                    self.collectionView.reloadSections(NSIndexSet(index: 0))
+                self.collectionView.performBatchUpdates({
+                    self.collectionView.reloadSections(IndexSet(integer: 0))
                     }, completion: nil)
             })
             alert.addAction(playAgainAction)
             
-            let exitAction = UIAlertAction(title: "Exit", style: .Destructive, handler: { (action) in
+            let exitAction = UIAlertAction(title: "Exit", style: .destructive, handler: { (action) in
                 exit(0)
             })
             alert.addAction(exitAction)
             
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let cgFloatPadding = CGFloat(padding)
         return UIEdgeInsets(top: cgFloatPadding, left: cgFloatPadding, bottom: cgFloatPadding, right: cgFloatPadding)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         let cgFloatPadding = CGFloat(padding)
         return cgFloatPadding
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         let cgFloatPadding = CGFloat(padding)
         return cgFloatPadding
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let screenWidth = UIScreen.mainScreen().bounds.size.width
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.size.width
         let interItemPadding = (currentLevelSides - 1) * padding
         let allItemPadding = 2 * padding
         let totalPadding = CGFloat(interItemPadding + allItemPadding)
@@ -175,7 +174,7 @@ class ViewController: UIViewController, RAReorderableLayoutDelegate, RAReorderab
         return CGSize(width: cellSide, height: cellSide)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: UIScreen.mainScreen().bounds.size.width, height: 60)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 60)
     }
 }

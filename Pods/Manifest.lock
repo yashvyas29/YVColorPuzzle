@@ -1,11 +1,11 @@
 PODS:
-  - RAReorderableLayout (0.4.1)
+  - RAReorderableLayout (0.6.1)
 
 DEPENDENCIES:
   - RAReorderableLayout
 
 SPEC CHECKSUMS:
-  RAReorderableLayout: d5d3839bfc2a732a0463f08a6c91d76c9951cb77
+  RAReorderableLayout: 5b6b87dd4022ee1747fd475623b14f5df940f754
 
 PODFILE CHECKSUM: 5012a2c14487a12f33d2a62c8ad99d3603eca09d
 
